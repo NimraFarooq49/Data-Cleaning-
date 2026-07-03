@@ -1,16 +1,12 @@
-# Data Cleaning Pipeline
+## 📂 Project Structure
 
-## Description
-
-This project demonstrates a simple data cleaning pipeline using Python.
-
-## Features
-
-- Remove duplicates
-- Handle missing values
-- Clean data
-
-## Tools
-
-- Python
-- Pandas
+Data-Cleaning/
+├── main.py
+├── cleaner.py
+├── exporter.py
+├── README.md
+├── requirements.txt
+├── input/
+│ └── data.csv
+├── output/
+├── tests/
