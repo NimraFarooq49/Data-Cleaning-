@@ -24,6 +24,28 @@ class DataCleaner:
         print(f"Duplicate rows removed: {before - after}")
 
         return self.df
+    
+    def check_missing_values(self):
+        missing = self.df.isnull().sum()
+
+        print("Missing Values:")
+        print(missing)
+
+        return self.df
+    
+    def fill_missing_values(self):
+        for column in self.df.columns:
+
+           if self.df[column].isnull().all():
+               continue
+           if pd.api.types.is_numeric_dtype(self.df[column]):
+              self.df[column] = self.df[column].fillna(self.df[column].median())
+           else:
+              self.df[column] = self.df[column].fillna(self.df[column].mode().iloc[0])
+
+        print("Missing values filled successfully.")
+
+        return self.df
 
 
 

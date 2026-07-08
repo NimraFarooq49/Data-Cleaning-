@@ -15,6 +15,10 @@ df = cleaner.remove_duplicates()
 print("\nDataset After Removing Duplicates:")
 print(df)
 
+df = cleaner.check_missing_values()
+
+df = cleaner.fill_missing_values()
+df = cleaner.check_missing_values()
 
 # EDA
 # eda = EDAanalysis(df)
