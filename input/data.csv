@@ -2,12 +2,12 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked,
 1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S,12@gmail.com
 2,1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38,1,0,PC 17599,71.2833,C85,C,23@gmail.com
 3,1,3,"Heikkinen, Miss. Laina",female,26,0,0,STON/O2. 3101282,7.925,,S,34@gmail.com
-4,1,1," "" Ali""",female,35,1,0,113803,53.1,C123,S,abc@
+4,1,1," "" Ali""",female,35,1,0,113803,53.1,C123,S,abc@gmail.com
 5,0,3,,male,35,0,0,373450,8.05,,S,56@gmail.com
 6,0,3,"Moran, Mr. James",male,,0,0,330877,8.4583,,Q,67@gmail.com
 7,0,1,"McCarthy, Mr. Timothy J",male,54,0,0,17463,51.8625,E46,S,78@gmail.com
 8,0,3,"Palsson, Master. Gosta Leonard",male,2,3,1,349909,21.075,,S,89@gmail.com
-9,1,3,"""John """,female,27,0,2,347742,11.1333,,S,test@@gmail.com
+9,1,3,"""John """,female,27,0,2,347742,11.1333,,S,test@gmail.com
 10,1,2,"Nasser, Mrs. Nicholas (Adele Achem)",female,14,1,0,A/5 21171,30.0708,,C,1011@gmail.com
 11,1,3,"Sandstrom, Miss. Marguerite Rut",female,4,1,1,PP 9549,16.7,G6,S,1112@gmail.com
 12,1,1,"Bonnell, Miss. Elizabeth",,58,0,0,113783,26.55,C103,S,1213@gmail.com
@@ -17,12 +17,12 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked,
 6,0,3,"Moran, Mr. James",male,,0,0,330877,8.4583,,Q,67@gmail.com
 17,0,3,"Rice, Master. Eugeneeeeeee",male,2,4,1,382652,29.125,,Q,1718@gmail.com
 18,1,2,"Williams, Mr. Charles Eugene",male,,0,0,244373,13,,S,1819@gmail.com
-19,0,3,"Vander Planke, Mrs. Julius (Emelia Maria Vandemoortele)",female,31,1,0,345763,18,,S,
+19,0,3,"Vander Planke, Mrs. Julius (Emelia Maria Vandemoortele)",female,31,1,0,345763,18,,S,ahmad@gmail.com
 20,1,3,"Masselmani, Mrs. Fatim  a",,,0,0,2649,7.225,,C,2021@gmail.com
 21,0,2,"Fynney, Mr. Joseph J",male,35,0,0,239865,26,,S,2122@gmail.com
 22,1,2,"Beesley, Mr. Lawrence",male,34,0,0,248698,13,D56,S,2223@gmail.com
 23,1,3,"McGowan, Miss. Anna ""Annie""",female,15,0,0,330923,8.0292,,Q,2324@gmail.com
-24,1,1,"Sloper, Mr. William Thompson",male,28,0,0,113788,35.5,A6,S,
+24,1,1,"Sloper, Mr. William Thompson",male,28,0,0,113788,35.5,A6,S,sara.khan@gmail.com
 25,0,3,"Palsson, Miss. Torborg Danira",female,8,3,1,349909,21.075,,S,2526@gmail.com
 26,1,3,"Asplund, Mrs. Carl Oscar (Selma Augusta Emilia Johansson)",female,38,1,5,347077,31.3875,,S,2627@gmail.com
 27,0,3,"Emir, Mr. Farred Chehab",male,,0,0,2631,7.225,,C,2728@gmail.com
@@ -70,7 +70,7 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked,
 69,1,3,"Andersson, Miss. Erna Alexandra",female,17,4,2,3101281,7.925,,S,6970@gmail.com
 70,0,3,"Kink, Mr. Vincenz",male,26,2,0,315151,8.6625,,S,7071@gmail.com
 71,0,2,"Jenkin, Mr. Stephen Curnow",male,32,0,0,C.A. 33111,10.5,,S,7172@gmail.com
-72,0,3,"Goodwin, Miss. Lillian Amy",female,16,5,2,CA 2144,46.9,,S,""" 7273@gmail.com   """
+72,0,3,"Goodwin, Miss. Lillian Amy",female,16,5,2,CA 2144,46.9,,S,7273@gmail.com
 73,0,2,"Hood, Mr. Ambrose Jr",male,21,0,0,S.O.C. 14879,73.5,,S,7374@gmail.com
 74,0,3,"Chronopoulos, Mr. Apostolos",male,26,1,0,2680,14.4542,,C,7475@gmail.com
 75,1,3,"Bing, Mr. Lee",male,32,0,0,1601,56.4958,,S,7576@gmail.com
@@ -81,7 +81,7 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked,
 80,1,3,"Dowdell, Miss. Elizabeth",female,30,0,0,364516,12.475,,S,8081@gmail.com
 81,0,3,"Waelens, Mr. Achille",male,22,0,0,345767,9,,S,8182@gmail.com
 82,1,3,"Sheerlinck, Mr. Jan Baptist",male,29,0,0,345779,9.5,,S,8283@gmail.com
-83,1,3,"McDermott, Miss. Brigdet Delia",female,,0,0,330932,7.7875,,Q,"""8384@gmail.com   ""  "
+83,1,3,"McDermott, Miss. Brigdet Delia",female,,0,0,330932,7.7875,,Q,8384@gmail.com
 84,0,1,"Carrau, Mr. Francisco M",male,28,0,0,113059,47.1,,S,8485@gmail.com
 85,1,2,"Ilett, Miss. Bertha",female,17,0,0,SO/C 14885,10.5,,S,8586@gmail.com
 86,1,3,"Backstrom, Mrs. Karl Alfred (Maria Mathilda Gustafsson)",female,33,3,0,3101278,15.85,,S,8687@gmail.com
