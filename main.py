@@ -26,6 +26,7 @@ try:
     print(df)
 
     df = cleaner.clean_email()
+    print("\nDataset After Email Cleaning:")
 
     print(df)
 

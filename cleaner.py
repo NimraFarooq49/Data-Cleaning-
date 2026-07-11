@@ -7,8 +7,13 @@ class LoadData:
         self.df = None
 
     def load_data(self):
-        self.df = pd.read_csv(self.filepath)
-        return self.df
+        try:
+            self.df = pd.read_csv(self.filepath)
+            return self.df
+
+        except Exception as e:
+
+            print(f"Error loading file: {e}")
 
 
 class DataCleaner:
@@ -16,62 +21,80 @@ class DataCleaner:
         self.df = df.copy()
 
     def remove_duplicates(self):
-        before = len(self.df)
+        try:
 
-        self.df = self.df.drop_duplicates().reset_index(drop=True)
+            before = len(self.df)
+            self.df = self.df.drop_duplicates().reset_index(drop=True)
+            after = len(self.df)
+            print(f"Duplicate rows removed: {before - after}")
+            return self.df
 
-        after = len(self.df)
-
-        print(f"Duplicate rows removed: {before - after}")
-
-        return self.df
+        except Exception as e:
+            print(f"Error removing duplicates:{e}")
 
     def check_missing_values(self):
-        missing = self.df.isnull().sum()
+        try:
+            missing = self.df.isnull().sum()
+            print("Missing Values:")
+            print(missing)
+            return self.df
 
-        print("Missing Values:")
-        print(missing)
-
-        return self.df
+        except Exception as e:
+            print(f"Error checking missing values: {e}")
 
     def fill_missing_values(self):
-        for column in self.df.columns:
+        try:
+            for column in self.df.columns:
 
-            if self.df[column].isnull().all():
-                continue
-            if pd.api.types.is_numeric_dtype(self.df[column]):
-                self.df[column] = self.df[column].fillna(self.df[column].median())
-            else:
-                self.df[column] = self.df[column].fillna(self.df[column].mode().iloc[0])
+                if self.df[column].isnull().all():
+                    continue
+                if pd.api.types.is_numeric_dtype(self.df[column]):
+                    self.df[column] = self.df[column].fillna(self.df[column].median())
+                else:
+                    self.df[column] = self.df[column].fillna(
+                        self.df[column].mode().iloc[0]
+                    )
 
-        print("Missing values filled successfully.")
+            print("Missing values filled successfully.")
+            return self.df
 
-        return self.df
+        except Exception as e:
+            print(f"Error filling missing values: {e}")
 
     def remove_whitespaces(self):
-        for column in self.df.columns:
-            if self.df[column].dtype == "object":
-                self.df[column] = self.df[column].str.strip()
-        print("whitespaces removed successfully.")
+        try:
 
-        return self.df
+            for column in self.df.columns:
+                if self.df[column].dtype == "object":
+                    self.df[column] = self.df[column].str.strip()
+            print("whitespaces removed successfully.")
+            return self.df
+
+        except Exception as e:
+            print(f"Error removing whitespaces: {e}")
 
     def clean_email(self):
-        for column in self.df.columns:
-            if "email" in column.lower():
-                self.df[column] = (
-                    self.df[column]
-                    .astype(str)
-                    .str.strip()
-                    .str.lower()
-                    .str.replace(" ", "")
-                )
+        try:
 
-                self.df = self.df[
-                    self.df[column].astype(str).str.match(r"^[\w\.-]+@[\w\.-]+\.\w+$")
-                ]
+            for column in self.df.columns:
+                if "email" in column.lower():
+                    self.df[column] = (
+                        self.df[column]
+                        .astype(str)
+                        .str.strip()
+                        .str.lower()
+                        .str.replace(" ", "")
+                    )
 
-        return self.df
+                    self.df = self.df[
+                        self.df[column]
+                        .astype(str)
+                        .str.match(r"^[\w\.-]+@[\w\.-]+\.\w+$")
+                    ]
+            return self.df
+
+        except Exception as e:
+            print(f"Error cleaning email: {e}")
 
 
 # class EDAanalysis:
