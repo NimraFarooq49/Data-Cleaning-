@@ -1,5 +1,6 @@
 import pandas as pd
-from cleaner import LoadData, DataCleaner
+from cleaner import LoadData, DataCleaner, EDAAnalysis
+from exporter import ExportData
 
 try:
 
@@ -41,41 +42,28 @@ except Exception as e:
 
 
 # EDA
-# eda = EDAanalysis(df)
+eda = EDAAnalysis(df)
 
-# print(eda.preview())
-# print("Shape:", eda.shape())
-# print("Columns:", eda.columns())
+print("\nPreview:")
+print(eda.preview())
 
-# eda.info()
+print("\nShape:")
+print(eda.shape())
 
+print("\nColumns:")
+print(eda.columns())
 
-# Cleaning
+print("\nInfo:")
+eda.info()
 
-
-# print("Missing Values:\n")
-# print(cleaner.missing_value())
-
-#  df = cleaner.remove_duplicates()
-# df = cleaner.fill_missing()
-# df = cleaner.remove_whitespace()
-# df = cleaner.clean_invalid_email()
-
-# print("\nCleaning Done")
-
-# cleaner = DataCleaner(df)
-
-# print("\nMissing Values:\n")
-# print(cleaner.missing_value())
-
-# print("\nFirst 5 Rows After Cleaning:")
-# print(df.head())
+print("\nSummary:")
+print(eda.summary())
 
 
 # Export Cleaned Data
-# export = ExportData(df)
+export = ExportData(df)
 
-# export.save_data()
-# export.save_json()
+export.save_csv("output/cleaned_data.csv")
+export.save_json("output/cleaned_data.json")
 
-# print("\nCleaned dataset exported successfully!")
+print("\nCleaned dataset exported successfully!")

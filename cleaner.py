@@ -97,18 +97,21 @@ class DataCleaner:
             print(f"Error cleaning email: {e}")
 
 
-# class EDAanalysis:
-#     def __init__(self, df):
-#         self.df = df
+class EDAAnalysis:
+    def __init__(self, df):
+        self.df = df
 
-#     def preview(self):
-#         return self.df.head()
+    def preview(self):
+        return self.df.head()
 
-#     def shape(self):
-#         return self.df.shape
+    def shape(self):
+        return self.df.shape
 
-#     def columns(self):
-#         return self.df.columns
+    def columns(self):
+        return self.df.columns.tolist()
 
-#     def info(self):
-#         return self.df.info()
+    def info(self):
+        self.df.info()
+
+    def summary(self):
+        return self.df.describe(include="all")

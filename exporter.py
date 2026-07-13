@@ -2,8 +2,10 @@ class ExportData:
     def __init__(self, df):
         self.df = df
 
-    def save_data(self):
-        self.df.to_csv("output/cleaned_data.csv", index=False)
+    def save_csv(self, filepath):
+        self.df.to_csv(filepath, index=False)
+        print("CSV file saved successfully.")
 
-    def save_json(self):
-        self.df.to_json("output/cleaned_data.json", orient="records", indent=4)
+    def save_json(self, filepath):
+        self.df.to_json(filepath, orient="records", indent=4)
+        print("JSON file saved successfully.")
