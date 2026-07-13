@@ -12,12 +12,15 @@ df = loader.load_data()
 # Clean Data
 cleaner = DataCleaner(df)
 
-df = cleaner.remove_duplicate()
-df = cleaner.fill_missing()
-df = cleaner.remove_whitespace()
-df = cleaner.clean_invalid_email()
+df = cleaner.remove_duplicates()
+df = cleaner.fill_missing_values()
+df = cleaner.remove_whitespaces()
+df = cleaner.clean_email()
 
-# Check Missing Values
-assert cleaner.missing_value().sum() == 0
+# Test Missing Values
+assert df.isnull().sum().sum() == 0
+
+# Test Duplicate Rows
+assert df.duplicated().sum() == 0
 
 print("All tests passed successfully!")
