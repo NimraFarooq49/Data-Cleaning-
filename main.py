@@ -1,16 +1,19 @@
 import pandas as pd
 from cleaner import LoadData, DataCleaner, EDAAnalysis
 from exporter import ExportData
+from model import ModelTraining
 
 try:
 
     # Load Data
-    loader = LoadData("input/data.csv")
+    # loader = LoadData("input/train.csv")
+    # loader = LoadData("input/test.csv")
+    # loader = LoadData("input/Student_Performance_Dataset.csv")
+    loader = LoadData("input/energy_efficiency.csv")
     df = loader.load_data()
 
     # Cleaning
     cleaner = DataCleaner(df)
-
     df = cleaner.remove_duplicates()
 
     print("\nDataset After Removing Duplicates:")
@@ -28,8 +31,17 @@ try:
 
     df = cleaner.clean_email()
     print("\nDataset After Email Cleaning:")
-
     print(df)
+
+    print("\nBefore Removing Outliers")
+    cleaner.visualize_outliers("Before Outlier Removal")
+
+    df = cleaner.handle_outliers()
+
+    cleaner.df = df
+
+    print("\nAfter Removing Outliers")
+    cleaner.visualize_outliers("After Outlier Removal")
 
 except FileNotFoundError:
     print("Error: File not found.")
@@ -59,11 +71,25 @@ eda.info()
 print("\nSummary:")
 print(eda.summary())
 
+print("\nCorrelation Heatmap:")
+eda.correlation_heatmap()
+
 
 # Export Cleaned Data
 export = ExportData(df)
 
-export.save_csv("output/cleaned_data.csv")
-export.save_json("output/cleaned_data.json")
+# export.save_csv("output/train_cleaned.csv")
+# export.save_json("output/train_cleaned.json")
+# export.save_csv("output/test_cleaned.csv")
+# export.save_json("output/test_cleaned.json")
+# export.save_csv("output/student_performance_cleaned.csv")
+# export.save_json("output/student_performance_cleaned.json")
+export.save_csv("output/energy_efficiency_cleaned.csv")
+export.save_json("output/energy_efficiency_cleaned.json")
 
 print("\nCleaned dataset exported successfully!")
+
+
+# Model Training
+model = ModelTraining()
+model.train()
